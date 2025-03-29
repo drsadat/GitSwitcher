@@ -1,0 +1,5 @@
+# Private configuration files
+config/identities.json
+
+# Template file should be included
+!config/identities.json.template 
