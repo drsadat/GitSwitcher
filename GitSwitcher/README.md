@@ -1,61 +1,57 @@
 # GitSwitcher
 
-A tool to manage multiple Git identities and VS Code workspaces with a single command.
+A tool to manage multiple GitHub identities and workspaces efficiently. GitSwitcher helps you maintain separate Git identities for different contexts (academic, research, personal, etc.) and automatically switches between them based on your workspace.
 
-## Project Structure
+## Features
 
-```
-GitSwitcher/
-├── config/
-│   └── identities.json    # Git identity configurations
-├── scripts/
-│   ├── set-identity.sh    # Core Git identity setting script
-│   └── switch.sh          # Main entry point script
-└── src/
-    └── workspace/         # Workspace configuration files
-        ├── academic.code-workspace
-        ├── research.code-workspace
-        └── work.code-workspace
-```
+- 🔄 Automatic Git identity switching based on workspace
+- 🗂️ Workspace-specific configurations
+- 🔐 SSH key management for different identities
+- 📝 Easy-to-use scripts for setup and switching
+- 🚀 VS Code workspace integration
 
 ## Setup
 
-1. Clone this repository to your desired location
-2. Update `config/identities.json` with your Git identities
-3. Update workspace paths in `src/workspace/*.code-workspace` files
-4. Create an Alfred workflow:
-   - Keyword: `gitid`
-   - With Space: Yes
-   - Script: `path/to/GitSwitcher/scripts/switch.sh {query}`
+1. Clone the repository:
+   ```bash
+   git clone git@github-tools:drsadat/GitSwitcher.git
+   ```
+
+2. Generate SSH keys for each identity:
+   ```bash
+   ./scripts/add_github_keys.sh
+   ```
+
+3. Configure your identities in `config/identities.json`:
+   ```json
+   {
+     "academic": {
+       "name": "Your Academic Name",
+       "email": "your.academic@university.edu",
+       "workspace": "academic"
+     }
+   }
+   ```
+
+4. Set up workspace configurations in `src/workspace/`.
 
 ## Usage
 
+Switch between identities using:
 ```bash
-gitid acad  # Switch to academic identity
-gitid res   # Switch to research identity
-gitid work  # Switch to work identity
+./scripts/set-git-identity.sh [profile]
 ```
 
-## Configuration
+Where `[profile]` is one of your configured identities (e.g., academic, research, personal).
 
-Edit `config/identities.json` to add or modify Git identities:
+## License
 
-```json
-{
-  "acad": {
-    "name": "Prof. Sadat Choudhury",
-    "email": "sadat@university.edu",
-    "workspace": "academic"
-  },
-  "res": {
-    "name": "Sadat Choudhury",
-    "email": "sadat@researchhub.org",
-    "workspace": "research"
-  },
-  "work": {
-    "name": "Dr. Sadat Choudhury",
-    "email": "sadat@company.com",
-    "workspace": "work"
-  }
-}
-``` 
+MIT License - See LICENSE file for details.
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request 
