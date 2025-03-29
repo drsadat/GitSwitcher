@@ -1,0 +1,13 @@
+{
+  "folders": [
+    {
+      "path": "~/Workspaces/academic"
+    }
+  ],
+  "settings": {
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "git.enableSmartCommit": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "cursor.cursor"
+  }
+} 

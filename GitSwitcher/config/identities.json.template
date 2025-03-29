@@ -1,0 +1,17 @@
+{
+  "acad": {
+    "name": "Your Academic Name",
+    "email": "your.academic@university.edu",
+    "workspace": "academic"
+  },
+  "res": {
+    "name": "Your Research Name",
+    "email": "your.research@organization.org",
+    "workspace": "research"
+  },
+  "work": {
+    "name": "Your Work Name",
+    "email": "your.work@company.com",
+    "workspace": "work"
+  }
+} 
